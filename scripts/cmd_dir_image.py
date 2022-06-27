@@ -22,9 +22,9 @@ class cmd_dir_image_node:
         self.imgCV_con = cv2.imread(self.file_con)
         self.cmd_dir_list = []
         self.old_cmd_dir_list =[]
-        self.step_num
+        #self.step_num
         self.cmd_dir_sub = rospy.Subscriber("/cmd_dir",Int8MultiArray, self.cmd_dir_callback)
-        self.episode_num_sub = rospy.Subscriber("/episode_num",Int8, self.num_callback)
+        #self.episode_num_sub = rospy.Subscriber("/episode_num",Int8, self.num_callback)
         #self.step_num = 100
 
     def cmd_dir_callback(self,data):
@@ -34,7 +34,7 @@ class cmd_dir_image_node:
         self.step_num =str(data.data)
 
     def cv_img(self,img_name):
-        cv2.putText(img_name, self.step_num,(500,100),cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
+        cv2.putText(img_name, "cmd",(500,100),cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
         cv2.imshow("dir", img_name)
 
     def loop(self):
