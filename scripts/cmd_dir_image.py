@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from ast import Num
 from platform import node
 
 import rospy
